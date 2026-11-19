@@ -1,0 +1,95 @@
+# Official ASHRAE DB II measurement columns (CBE GitHub codebook)
+# mapped to research-level variables. Do not assume every column is populated.
+
+source: https://github.com/CenterForTheBuiltEnvironment/ashrae-db-II
+table: measurements
+
+targets:
+  thermal_sensation:
+    raw_column: thermal_sensation
+    concept: Thermal Sensation Vote (TSV)
+    scale: ASHRAE 7-point, typically -3 (cold) to +3 (hot)
+    use_as: primary_supervised_target
+    not_equivalent_to: thermal_comfort
+  thermal_comfort:
+    raw_column: thermal_comfort
+    concept: Thermal Comfort Vote (TCV)
+    scale: 1 (very uncomfortable) to 6 (very comfortable)
+    use_as: secondary_target_only_if_non_null_coverage_is_adequate
+    not_equivalent_to: thermal_sensation
+  thermal_acceptability:
+    raw_column: thermal_acceptability
+    concept: binary acceptability
+    values: [acceptable, unacceptable]
+    use_as: optional_auxiliary_label
+  thermal_preference:
+    raw_column: thermal_preference
+    concept: thermal preference
+    values: [cooler, no change, warmer]
+    use_as: optional_auxiliary_label
+
+features:
+  air_temperature_c:
+    raw_column: ta
+    unit: C
+    citylearn_counterpart: indoor_dry_bulb_temperature
+    transfer_status: approximate_same_physical_quantity
+  relative_humidity_pct:
+    raw_column: rh
+    unit: percent
+    citylearn_counterpart: indoor_relative_humidity
+    transfer_status: approximate_same_physical_quantity
+  air_speed_mps:
+    raw_column: vel
+    unit: m/s
+    citylearn_counterpart: null
+    transfer_status: missing_in_citylearn_must_use_documented_default_or_omit
+  clothing_insulation_clo:
+    raw_column: clo
+    unit: clo
+    citylearn_counterpart: null
+    transfer_status: missing_in_citylearn_must_use_documented_default_or_omit
+  metabolic_rate_met:
+    raw_column: met
+    unit: met
+    citylearn_counterpart: null
+    transfer_status: missing_in_citylearn_must_use_documented_default_or_omit
+  outdoor_air_temperature_c:
+    raw_column: t_out
+    unit: C
+    citylearn_counterpart: outdoor_dry_bulb_temperature
+    transfer_status: approximate_same_physical_quantity
+  season:
+    raw_column: season
+    citylearn_counterpart: derived_from_month
+    transfer_status: derived
+  age_years:
+    raw_column: age
+    citylearn_counterpart: null
+    transfer_status: unavailable_in_simulation
+  gender:
+    raw_column: gender
+    citylearn_counterpart: null
+    transfer_status: unavailable_in_simulation
+
+grouping_keys_for_validation:
+  - building_id
+  - subject_id
+metadata_join_key: building_id
+metadata_fields_of_interest:
+  - country
+  - city
+  - climate
+  - building_type
+  - cooling_type
+  - publication
+  - year
+  - database
+  - quality_assurance
+
+citylearn_bridge_policy:
+  description: >
+    At inference time the comfort model may only consume features that exist in
+    CityLearn observations or that are explicitly set as constants documented in
+    an experiment config. ASHRAE rows are never joined to CityLearn timesteps.
+  forbidden: row_wise_dataset_merge

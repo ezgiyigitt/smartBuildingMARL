@@ -1,0 +1,55 @@
+package:
+  name: CityLearn
+  pinned_version: "3.5.0"
+  pypi: https://pypi.org/project/CityLearn/3.5.0/
+  docs: https://www.citylearn.net/
+  github: https://github.com/citylearn-project/CityLearn
+  python_requires: ">=3.9"
+  gymnasium: ">=0.28.1,<2.0.0"
+  numpy: "<3.0.0"
+
+api_notes:
+  env_class: citylearn.citylearn.CityLearnEnv
+  dataset_listing: citylearn.data.DataSet().get_dataset_names()
+  reset: "observations, info = env.reset(seed=...)"
+  step: "observations, rewards, terminated, truncated, info = env.step(actions)"
+  central_agent: schema_or_constructor_flag
+  named_dataset_example: citylearn_challenge_2020_climate_zone_1
+
+selection_policy:
+  research_requirement: indoor_temperature_must_be_causally_affected_by_actions
+  reject_if:
+    - actions_are_battery_only_and_indoor_temperature_is_exogenous
+  inspect_before_training:
+    - schema.json
+    - env.action_names
+    - env.observation_names
+    - building class (Building vs DynamicsBuilding)
+    - presence of occupant_count
+    - presence of indoor_dry_bulb_temperature
+    - presence of cooling_device or heating_device or cooling_or_heating_device
+
+building_file_columns_documented_by_citylearn_3_5:
+  required:
+    - month
+    - hour
+    - day_type
+    - indoor_dry_bulb_temperature
+    - non_shiftable_load
+    - dhw_demand
+    - cooling_demand
+    - heating_demand
+    - solar_generation
+  optional:
+    - occupant_count
+    - indoor_relative_humidity
+    - indoor_dry_bulb_temperature_cooling_set_point
+    - indoor_dry_bulb_temperature_heating_set_point
+    - hvac_mode
+    - comfort_band
+    - power_outage
+
+known_limitation:
+  indoor_relative_humidity: >
+    CityLearn maintainers have stated that RH in CSV files is observational and
+    is not dynamically simulated. Do not treat humidity as a controllable state.

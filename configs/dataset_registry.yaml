@@ -1,0 +1,75 @@
+# Registry of authorized research datasets.
+# Raw files are never committed. Status is local until a download/validation script succeeds.
+
+datasets:
+  ashrae_gcdb2:
+    title: ASHRAE Global Thermal Comfort Database II
+    version_target: "2.1"
+    role: occupant_thermal_sensation_and_optional_comfort_labels
+    official_sources:
+      - name: Dryad
+        url: https://datadryad.org/dataset/doi:10.6078/D1F671
+        doi: 10.6078/D1F671
+      - name: CBE GitHub (maintenance repository)
+        url: https://github.com/CenterForTheBuiltEnvironment/ashrae-db-II
+    primary_paper:
+      citation_key: FoldvaryLicina2018
+      doi: 10.1016/j.buildenv.2018.06.022
+    license_notes:
+      - "Dryad record metadata describes a CC0 1.0 dedication for the published data files."
+      - "The 2018 database paper states the Comfort Database is available under the Open Database License (ODbL)."
+      - "Users must retain both statements and follow the more restrictive applicable terms until legal clarification is recorded."
+    expected_files:
+      - metadata.csv
+      - measurements.csv.gz
+    local_path: data/raw/ashrae_gcdb2
+    merge_with_citylearn: false
+    acquisition_note: "Dryad zip API returned HTTP 401 on 2026-11-19. Files loaded from CBE GitHub v2.1.0."
+    status: downloaded
+
+  zenodo_tsv_complete_case:
+    title: Thermal Sensation Classification Dataset based on ASHRAE Global Thermal Comfort Database II
+    version_target: "v1"
+    role: complete_case_tsv_classification_subset
+    official_sources:
+      - name: Zenodo
+        url: https://zenodo.org/records/13884633
+        doi: 10.5281/zenodo.13884633
+    authors:
+      - Kuru Erdem, Merve
+      - Calis, Gulben
+      - Gokalp, Osman
+    license: CC-BY-4.0
+    scientific_caveat: >
+      This is a complete-case subset of ASHRAE Database II version 2.01 (10,618 rows).
+      It is curated by researchers affiliated with Turkish institutions. It is NOT a
+      field study of occupants in Turkey and MUST NOT be described as a Turkish occupancy
+      or comfort measurement campaign.
+    local_path: data/raw/zenodo_tsv_subset
+    merge_with_citylearn: false
+    md5_verified: "9deb23a64d9624c7d3ccd3dc97589e2d"
+    status: downloaded
+
+  citylearn_public:
+    title: CityLearn public named datasets bundled with the Python package
+    version_target: "3.5.0"
+    role: multi_building_energy_simulation
+    official_sources:
+      - name: CityLearn documentation
+        url: https://www.citylearn.net/
+      - name: GitHub
+        url: https://github.com/citylearn-project/CityLearn
+      - name: PyPI
+        url: https://pypi.org/project/CityLearn/
+    license: MIT (software); individual bundled datasets retain their published terms
+    local_path: data/raw/citylearn
+    preferred_named_datasets_to_inspect:
+      - citylearn_challenge_2023_phase_all
+      - citylearn_challenge_2022_phase_all
+      - citylearn_challenge_2020_climate_zone_1
+    scientific_caveat: >
+      Named datasets differ in whether indoor temperature is dynamically controlled.
+      Battery-only Challenge 2022 scenarios do not support occupant-aware HVAC control
+      as a causal intervention. Selection must follow schema inspection after install.
+    selected_named_dataset: citylearn_challenge_2023_phase_1
+    status: validated

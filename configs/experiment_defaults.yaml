@@ -1,0 +1,25 @@
+reproducibility:
+  development_seeds: [0, 1, 2]
+  final_comparison_seeds_target: 10
+  note: Final 10-seed comparisons are a target, not a completed result.
+
+reward_weights:
+  status: placeholders_pending_sensitivity_analysis
+  energy: null
+  cost: null
+  carbon: null
+  discomfort: null
+  peak: null
+  constraint_violation: null
+  justification: >
+    Weights will be chosen after a documented sensitivity analysis in Phase 6–7.
+    Do not report a single weighted scalar as the scientific optimum.
+
+safety_layer:
+  type: heuristic_constraint_filter
+  formal_guarantee: false
+  conformal_prediction_does_not_imply_safe_control: true
+
+training:
+  blocking_http: false
+  job_backend: in_process_thread_pool_phase8

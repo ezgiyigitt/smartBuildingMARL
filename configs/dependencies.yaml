@@ -1,0 +1,35 @@
+python:
+  required: "3.11"
+  rejected_on_this_machine: "3.14.7"
+  reason: CityLearn and the scientific stack are not validated on Python 3.14.
+
+backend_phase1:
+  citylearn: "3.5.0"
+  fastapi: "0.115.*"
+  uvicorn: "0.32.*"
+  pydantic: "2.*"
+  pydantic-settings: "2.*"
+  pandas: "*"
+  numpy: "<3"
+  scikit-learn: "*"
+  pyyaml: "*"
+  pytest: "*"
+  httpx: "*"
+
+deferred_until_needed:
+  xgboost: phase3
+  lightgbm: phase3
+  shap: phase4
+  matplotlib: phase2
+  plotly: phase2
+  torch: pulled_by_citylearn
+  gymnasium: pulled_by_citylearn
+
+frontend:
+  flutter_sdk_observed: "3.47.1"
+  dart_sdk_observed: "3.13.1"
+  state_management: flutter_riverpod
+  http: dio
+  routing: go_router
+  charts: fl_chart
+  architecture: MVVM
