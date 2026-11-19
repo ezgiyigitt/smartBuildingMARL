@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-11-19T21:53:57.288971+00:00",
+  "zenodo": {
+    "id": "zenodo_tsv_complete_case",
+    "doi": "10.5281/zenodo.13884633",
+    "license": "cc-by-4.0",
+    "title": "Thermal Sensation Classification Dataset based on ASHRAE Global Thermal Comfort Database II",
+    "files": [
+      {
+        "name": "Thermal Sensation Classification Database based on ASHRAE Global Thermal Comfort Database II.xlsx",
+        "bytes": 738251,
+        "sha256": "64e1f065459aef218c6ff24f389ea385caf0f064529a1608a9f1fb4c9a05cf34",
+        "source_url": "https://zenodo.org/api/records/13884633/files/Thermal%20Sensation%20Classification%20Database%20based%20on%20ASHRAE%20Global%20Thermal%20Comfort%20Database%20II.xlsx/content",
+        "stated_checksum": "md5:9deb23a64d9624c7d3ccd3dc97589e2d"
+      }
+    ],
+    "status": "downloaded"
+  },
+  "ashrae": {
+    "id": "ashrae_gcdb2",
+    "doi": "10.6078/D1F671",
+    "source": "cbe_github_v2.1.0",
+    "dryad_download_blocked": "HTTPError: HTTP Error 401: Unauthorized",
+    "github_repo": "https://github.com/CenterForTheBuiltEnvironment/ashrae-db-II",
+    "files": [
+      {
+        "relative": "v2.1.0\\db_metadata.csv",
+        "bytes": 226093,
+        "sha256": "af6770a2b469f079cd172bd6632d1ae726a3a663515126816ff6d2d8f51bfc10",
+        "url": "https://raw.githubusercontent.com/CenterForTheBuiltEnvironment/ashrae-db-II/master/v2.1.0/db_metadata.csv"
+      },
+      {
+        "relative": "v2.1.0\\db_measurements_v2.1.0.csv.gz",
+        "bytes": 3033632,
+        "sha256": "9722be588ec3e779de21679513711e2d980138359a1b44bb9775e9499bc68380",
+        "url": "https://raw.githubusercontent.com/CenterForTheBuiltEnvironment/ashrae-db-II/master/v2.1.0/db_measurements_v2.1.0.csv.gz"
+      }
+    ],
+    "status": "downloaded",
+    "version_note": "Dryad zip returned HTTP 401. Files taken from CBE GitHub v2.1.0 paths documented as the Database II maintenance repository."
+  },
+  "citylearn": {
+    "id": "citylearn_public",
+    "named_dataset": "citylearn_challenge_2023_phase_1",
+    "schema_path": "C:\\Projects\\smartBuildingMARL\\data\\raw\\citylearn\\citylearn_challenge_2023_phase_1\\schema.json",
+    "copied_from": "C:\\Users\\Ezgi\\AppData\\Local\\citylearn-project\\citylearn\\Cache\\v3.5.0\\datasets\\citylearn_challenge_2023_phase_1",
+    "status": "copied"
+  },
+  "errors": []
+}
