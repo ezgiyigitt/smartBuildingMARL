@@ -1,0 +1,452 @@
+{
+  "generated_at_utc": "2026-11-19T21:59:02.710934+00:00",
+  "target_definition": "tsv_class = round(clip(thermal_sensation, -3, 3)). TSV is not TCV.",
+  "comfort_full_features": {
+    "n_rows": 47890,
+    "split_counts": {
+      "train": 36016,
+      "validation": 6153,
+      "test": 5721
+    },
+    "classes": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "features": [
+      "ta",
+      "rh",
+      "vel",
+      "clo",
+      "met",
+      "t_out"
+    ],
+    "models": {
+      "logreg": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.20976788094180365,
+            "macro_f1": 0.1962177675280965,
+            "balanced_accuracy": 0.29054741546146684,
+            "ordinal_mae": 1.5405375388716127
+          },
+          "validation": {
+            "accuracy": 0.18283764017552415,
+            "macro_f1": 0.16403800456102108,
+            "balanced_accuracy": 0.2346920329993638,
+            "ordinal_mae": 1.7134731025516008
+          },
+          "test": {
+            "accuracy": 0.19979024646040902,
+            "macro_f1": 0.17540814837650065,
+            "balanced_accuracy": 0.29463389909760185,
+            "ordinal_mae": 1.5018353434714211
+          }
+        }
+      },
+      "random_forest": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.46265548645046645,
+            "macro_f1": 0.457390697018247,
+            "balanced_accuracy": 0.5709816710401209,
+            "ordinal_mae": 0.9503553976010662
+          },
+          "validation": {
+            "accuracy": 0.2782382577604421,
+            "macro_f1": 0.2390147033634071,
+            "balanced_accuracy": 0.2610446222527618,
+            "ordinal_mae": 1.217292377701934
+          },
+          "test": {
+            "accuracy": 0.3099108547456738,
+            "macro_f1": 0.2515276564157501,
+            "balanced_accuracy": 0.2975505231927102,
+            "ordinal_mae": 1.1078482782730292
+          }
+        }
+      },
+      "xgboost": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.5045812972012439,
+            "macro_f1": 0.3711931121453559,
+            "balanced_accuracy": 0.3324993675798039,
+            "ordinal_mae": 0.7077132385606397
+          },
+          "validation": {
+            "accuracy": 0.39736713798147244,
+            "macro_f1": 0.158172090538758,
+            "balanced_accuracy": 0.17709744504365726,
+            "ordinal_mae": 0.8696570778482041
+          },
+          "test": {
+            "accuracy": 0.4738682048592903,
+            "macro_f1": 0.17519224613423118,
+            "balanced_accuracy": 0.18305167970103295,
+            "ordinal_mae": 0.7329138262541514
+          }
+        }
+      },
+      "lightgbm": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.5143547312305642,
+            "macro_f1": 0.3948470796210078,
+            "balanced_accuracy": 0.3525777638975263,
+            "ordinal_mae": 0.6913593958240782
+          },
+          "validation": {
+            "accuracy": 0.39216642288314646,
+            "macro_f1": 0.17233878828704038,
+            "balanced_accuracy": 0.185496982784021,
+            "ordinal_mae": 0.8789208516170973
+          },
+          "test": {
+            "accuracy": 0.46687642020625764,
+            "macro_f1": 0.18621306288985676,
+            "balanced_accuracy": 0.18846175879760435,
+            "ordinal_mae": 0.7371088970459709
+          }
+        }
+      }
+    },
+    "selected": "random_forest",
+    "selection_rule": "max validation macro_f1, then min ordinal_mae"
+  },
+  "comfort_transfer_features": {
+    "n_rows": 62989,
+    "split_counts": {
+      "train": 46274,
+      "validation": 8517,
+      "test": 8198
+    },
+    "classes": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "features": [
+      "ta",
+      "rh",
+      "t_out"
+    ],
+    "models": {
+      "logreg": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.1810519946406189,
+            "macro_f1": 0.17077273116548394,
+            "balanced_accuracy": 0.2901165845713944,
+            "ordinal_mae": 1.650235553442538
+          },
+          "validation": {
+            "accuracy": 0.15780204297287778,
+            "macro_f1": 0.1429242071726803,
+            "balanced_accuracy": 0.2320720523506086,
+            "ordinal_mae": 1.7749207467418104
+          },
+          "test": {
+            "accuracy": 0.1844352281044157,
+            "macro_f1": 0.15654579473655986,
+            "balanced_accuracy": 0.2799794398796934,
+            "ordinal_mae": 1.634666991949256
+          }
+        }
+      },
+      "random_forest": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.390067856679777,
+            "macro_f1": 0.3785928134243221,
+            "balanced_accuracy": 0.5048592665853738,
+            "ordinal_mae": 1.0910662575096166
+          },
+          "validation": {
+            "accuracy": 0.24363038628625103,
+            "macro_f1": 0.19513818554605125,
+            "balanced_accuracy": 0.22292558577239455,
+            "ordinal_mae": 1.317952330632852
+          },
+          "test": {
+            "accuracy": 0.25640400097584776,
+            "macro_f1": 0.21026900847675414,
+            "balanced_accuracy": 0.2739517811993714,
+            "ordinal_mae": 1.2836057575018298
+          }
+        }
+      },
+      "xgboost": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.4695509357306479,
+            "macro_f1": 0.29031813206403323,
+            "balanced_accuracy": 0.27422477370818277,
+            "ordinal_mae": 0.7521934563685871
+          },
+          "validation": {
+            "accuracy": 0.3842902430433251,
+            "macro_f1": 0.13750339140180473,
+            "balanced_accuracy": 0.1668636344614913,
+            "ordinal_mae": 0.882118116707761
+          },
+          "test": {
+            "accuracy": 0.4779214442546963,
+            "macro_f1": 0.1695244588980222,
+            "balanced_accuracy": 0.18343230006656658,
+            "ordinal_mae": 0.7345694071724811
+          }
+        }
+      },
+      "lightgbm": {
+        "metrics": {
+          "train": {
+            "accuracy": 0.47220901586203917,
+            "macro_f1": 0.3021913096393777,
+            "balanced_accuracy": 0.2804147456254927,
+            "ordinal_mae": 0.7460993214332022
+          },
+          "validation": {
+            "accuracy": 0.38335094516848656,
+            "macro_f1": 0.15278938005799364,
+            "balanced_accuracy": 0.1737777092054012,
+            "ordinal_mae": 0.878830574145826
+          },
+          "test": {
+            "accuracy": 0.4669431568675287,
+            "macro_f1": 0.16966615121052367,
+            "balanced_accuracy": 0.17949045949801018,
+            "ordinal_mae": 0.7450597706757746
+          }
+        }
+      }
+    },
+    "selected": "random_forest",
+    "selection_rule": "max validation macro_f1, then min ordinal_mae"
+  },
+  "occupancy": {
+    "n_raw_rows": 2160,
+    "buildings": [
+      "Building_1",
+      "Building_2",
+      "Building_3"
+    ],
+    "horizons": {
+      "1": {
+        "n_rows": 2085,
+        "split_counts": {
+          "train": 1459,
+          "validation": 313,
+          "test": 313
+        },
+        "models": {
+          "persistence": {
+            "train": {
+              "mae": 0.26936257710760797,
+              "rmse": 0.559667971675648
+            },
+            "validation": {
+              "mae": 0.3194888178913738,
+              "rmse": 0.619182187623036
+            },
+            "test": {
+              "mae": 0.33226837060702874,
+              "rmse": 0.603504144473065
+            }
+          },
+          "ridge": {
+            "train": {
+              "mae": 0.3337202444302813,
+              "rmse": 0.48709596894410784
+            },
+            "validation": {
+              "mae": 0.38741072871624777,
+              "rmse": 0.5373611011584134
+            },
+            "test": {
+              "mae": 0.37365264712476165,
+              "rmse": 0.504931374419172
+            }
+          },
+          "random_forest": {
+            "train": {
+              "mae": 0.19851076321995625,
+              "rmse": 0.33848758614101504
+            },
+            "validation": {
+              "mae": 0.44091487839556615,
+              "rmse": 0.6373276107151004
+            },
+            "test": {
+              "mae": 0.37946881626109175,
+              "rmse": 0.5525842226568631
+            }
+          },
+          "lightgbm": {
+            "train": {
+              "mae": 0.21141769370301325,
+              "rmse": 0.3432689265357254
+            },
+            "validation": {
+              "mae": 0.4464713567918914,
+              "rmse": 0.6161932933980011
+            },
+            "test": {
+              "mae": 0.3860676455669127,
+              "rmse": 0.5353866116543351
+            }
+          }
+        },
+        "selected": "persistence",
+        "selection_rule": "min validation MAE",
+        "split": "chronological 70/15/15 after lag/horizon dropna; no future columns"
+      },
+      "6": {
+        "n_rows": 2070,
+        "split_counts": {
+          "train": 1449,
+          "validation": 310,
+          "test": 311
+        },
+        "models": {
+          "persistence": {
+            "train": {
+              "mae": 0.6473429951690821,
+              "rmse": 0.958777689761862
+            },
+            "validation": {
+              "mae": 0.7741935483870968,
+              "rmse": 1.0776318121606494
+            },
+            "test": {
+              "mae": 0.8938906752411575,
+              "rmse": 1.1867434973983904
+            }
+          },
+          "ridge": {
+            "train": {
+              "mae": 0.5717215325818265,
+              "rmse": 0.713137288972535
+            },
+            "validation": {
+              "mae": 0.6256435030922508,
+              "rmse": 0.7620842886409971
+            },
+            "test": {
+              "mae": 0.6389838123023129,
+              "rmse": 0.7757670587130147
+            }
+          },
+          "random_forest": {
+            "train": {
+              "mae": 0.23986016353535167,
+              "rmse": 0.37960935282985875
+            },
+            "validation": {
+              "mae": 0.6975283621547983,
+              "rmse": 0.8294355672903799
+            },
+            "test": {
+              "mae": 0.7230984802782449,
+              "rmse": 0.8326802364593673
+            }
+          },
+          "lightgbm": {
+            "train": {
+              "mae": 0.25648983946616677,
+              "rmse": 0.38420199385898185
+            },
+            "validation": {
+              "mae": 0.6395874365843609,
+              "rmse": 0.7720685607451425
+            },
+            "test": {
+              "mae": 0.6624907656392114,
+              "rmse": 0.7781488771466554
+            }
+          }
+        },
+        "selected": "ridge",
+        "selection_rule": "min validation MAE",
+        "split": "chronological 70/15/15 after lag/horizon dropna; no future columns"
+      },
+      "24": {
+        "n_rows": 2016,
+        "split_counts": {
+          "train": 1411,
+          "validation": 302,
+          "test": 303
+        },
+        "models": {
+          "persistence": {
+            "train": {
+              "mae": 0.33947554925584694,
+              "rmse": 0.6548083072214621
+            },
+            "validation": {
+              "mae": 0.4105960264900662,
+              "rmse": 0.7233110036125676
+            },
+            "test": {
+              "mae": 0.39603960396039606,
+              "rmse": 0.7312000173321488
+            }
+          },
+          "ridge": {
+            "train": {
+              "mae": 0.40666269690128304,
+              "rmse": 0.5767936003509568
+            },
+            "validation": {
+              "mae": 0.4404698739518458,
+              "rmse": 0.6239833273239348
+            },
+            "test": {
+              "mae": 0.47255668004102847,
+              "rmse": 0.6810235959791839
+            }
+          },
+          "random_forest": {
+            "train": {
+              "mae": 0.22632735676028193,
+              "rmse": 0.37259414274575664
+            },
+            "validation": {
+              "mae": 0.4620817185484438,
+              "rmse": 0.6262704958911676
+            },
+            "test": {
+              "mae": 0.43301149179074006,
+              "rmse": 0.6092475546599997
+            }
+          },
+          "lightgbm": {
+            "train": {
+              "mae": 0.22598767162776642,
+              "rmse": 0.3598951734246609
+            },
+            "validation": {
+              "mae": 0.438656126522012,
+              "rmse": 0.5869635342224784
+            },
+            "test": {
+              "mae": 0.4265744238289539,
+              "rmse": 0.5838597987505747
+            }
+          }
+        },
+        "selected": "persistence",
+        "selection_rule": "min validation MAE",
+        "split": "chronological 70/15/15 after lag/horizon dropna; no future columns"
+      }
+    }
+  }
+}
