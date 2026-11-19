@@ -1,0 +1,585 @@
+{
+  "generated_at_utc": "2026-11-19T22:22:24.278460+00:00",
+  "phase": 4,
+  "protocol": {
+    "split_type": "grouped_by_building_id (seed 0)",
+    "calibration_split": "validation buildings (n=6153)",
+    "evaluation_split": "test buildings (n=5721)",
+    "nominal_target_coverage": 0.9,
+    "significance_alpha": 0.1,
+    "disclaimer": "Split conformal prediction requires exchangeability. Cross-building validation and test sets experience distribution shift across climates, building typologies, and occupant demographics. Empirical coverage may deviate from nominal coverage (1 - alpha); this layer is a heuristic diagnostic."
+  },
+  "comfort_full_features": {
+    "tag": "full",
+    "features": [
+      "ta",
+      "rh",
+      "vel",
+      "clo",
+      "met",
+      "t_out"
+    ],
+    "classes": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "split_counts": {
+      "train": 36016,
+      "validation": 6153,
+      "test": 5721
+    },
+    "calibration_split": "validation_buildings",
+    "test_split": "test_buildings",
+    "alpha": 0.1,
+    "target_coverage": 0.9,
+    "models": {
+      "random_forest": {
+        "calibration": {
+          "optimal_temperature": 0.8244297583421495,
+          "uncalibrated_ece": 0.04956208766676143,
+          "calibrated_ece": 0.05238486868226987,
+          "ece_improvement": -0.002822781015508438,
+          "uncalibrated_brier": 0.7665658813964268,
+          "calibrated_brier": 0.7649538734876177
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9169725572452369,
+          "mean_set_size": 3.999126026918371,
+          "median_set_size": 4.0,
+          "quantile": 0.8864547581240071,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "1": 0.001048767697954903,
+            "2": 0.032861387869253626,
+            "3": 0.22216395735011363,
+            "4": 0.4887257472469848,
+            "5": 0.22268834119909106,
+            "6": 0.030064674008040554,
+            "7": 0.0024471246285614405
+          },
+          "coverage_gap": 0.01697255724523683
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9143506380003495,
+          "mean_set_size": 4.0071665792693585,
+          "median_set_size": 4.0,
+          "quantile": 0.8974668472330048,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "1": 0.0017479461632581717,
+            "2": 0.04264988638349939,
+            "3": 0.21849327040727146,
+            "4": 0.4644292955776962,
+            "5": 0.23352560741129172,
+            "6": 0.03478412864883761,
+            "7": 0.0043698654081454295
+          },
+          "coverage_gap": 0.014350638000349525
+        },
+        "gating_diagnostics": {
+          "n_samples": 5721,
+          "conservative_rate": 0.9732564237021499,
+          "uncertainty_rate": 0.9556021674532424,
+          "severe_discomfort_risk_rate": 0.9601468274777137,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      },
+      "xgboost": {
+        "calibration": {
+          "optimal_temperature": 1.1428043112714352,
+          "uncalibrated_ece": 0.030164345299274527,
+          "calibrated_ece": 0.050752260659545745,
+          "ece_improvement": -0.020587915360271217,
+          "uncalibrated_brier": 0.6712996419316564,
+          "calibrated_brier": 0.6739341346757657
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9236147526656179,
+          "mean_set_size": 3.5969236147526655,
+          "median_set_size": 4.0,
+          "quantile": 0.9272577166557312,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "1": 0.0026219192448872575,
+            "2": 0.05366194721202587,
+            "3": 0.35605663345568955,
+            "4": 0.5207131620346094,
+            "5": 0.06572277573850725,
+            "6": 0.0012235623142807202
+          },
+          "coverage_gap": 0.023614752665617855
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9236147526656179,
+          "mean_set_size": 3.603041426324069,
+          "median_set_size": 4.0,
+          "quantile": 0.9161559343338013,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "1": 0.0008739730816290859,
+            "2": 0.0519140010487677,
+            "3": 0.35291033036182484,
+            "4": 0.5327739905610908,
+            "5": 0.060653731865058555,
+            "6": 0.0008739730816290859
+          },
+          "coverage_gap": 0.023614752665617855
+        },
+        "gating_diagnostics": {
+          "n_samples": 5721,
+          "conservative_rate": 0.9472120258696032,
+          "uncertainty_rate": 0.9472120258696032,
+          "severe_discomfort_risk_rate": 0.7299423177766124,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      },
+      "logreg": {
+        "calibration": {
+          "optimal_temperature": 1.2806090267101604,
+          "uncalibrated_ece": 0.0775603738556198,
+          "calibrated_ece": 0.08067273569993187,
+          "ece_improvement": -0.0031123618443120726,
+          "uncalibrated_brier": 0.828051066745355,
+          "calibrated_brier": 0.8250616879743006
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9293829750043698,
+          "mean_set_size": 4.738507253976578,
+          "median_set_size": 5.0,
+          "quantile": 0.8967830496162414,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "2": 0.0047194546407970635,
+            "3": 0.08687292431393114,
+            "4": 0.3637475965740255,
+            "5": 0.27547631532948785,
+            "6": 0.24820835518266038,
+            "7": 0.02097535395909806
+          },
+          "coverage_gap": 0.029382975004369816
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9313057157839538,
+          "mean_set_size": 4.664918720503408,
+          "median_set_size": 5.0,
+          "quantile": 0.8845091460530898,
+          "calibration_size": 6153,
+          "test_size": 5721,
+          "set_size_distribution": {
+            "2": 0.003146303093864709,
+            "3": 0.08092990735885335,
+            "4": 0.40622268834119907,
+            "5": 0.27949659150498163,
+            "6": 0.217968886558294,
+            "7": 0.012235623142807201
+          },
+          "coverage_gap": 0.0313057157839538
+        },
+        "gating_diagnostics": {
+          "n_samples": 5721,
+          "conservative_rate": 1.0,
+          "uncertainty_rate": 0.9968536969061353,
+          "severe_discomfort_risk_rate": 1.0,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      }
+    },
+    "explainability": {
+      "random_forest_tree_gini": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "vel",
+          "clo",
+          "met",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.32838826047265485,
+          "t_out": 0.19705219431054488,
+          "clo": 0.17123175307196242,
+          "rh": 0.12494179594004295,
+          "vel": 0.09470182793899011,
+          "met": 0.0836841682658048
+        },
+        "std_importance": {
+          "ta": 0.0,
+          "t_out": 0.0,
+          "clo": 0.0,
+          "rh": 0.0,
+          "vel": 0.0,
+          "met": 0.0
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "clo",
+          "rh",
+          "vel",
+          "met"
+        ],
+        "method": "tree_gini_gain"
+      },
+      "random_forest_permutation_macro_f1": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "vel",
+          "clo",
+          "met",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.09774732295578256,
+          "t_out": 0.0480521131616566,
+          "rh": 0.02930554101566154,
+          "clo": 0.024542136062810527,
+          "met": 0.015705946195844922,
+          "vel": 0.008234954031522667
+        },
+        "std_importance": {
+          "ta": 0.004969468889940282,
+          "t_out": 0.00244697226895752,
+          "rh": 0.0029440619903907694,
+          "clo": 0.0029669550704392355,
+          "met": 0.004354673658542547,
+          "vel": 0.0013765781902454067
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "rh",
+          "clo",
+          "met",
+          "vel"
+        ],
+        "method": "permutation_f1_macro"
+      },
+      "xgboost_tree_gain": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "vel",
+          "clo",
+          "met",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.33518174290657043,
+          "t_out": 0.16613711416721344,
+          "met": 0.1400451958179474,
+          "clo": 0.1370059996843338,
+          "rh": 0.11476723104715347,
+          "vel": 0.10686267167329788
+        },
+        "std_importance": {
+          "ta": 0.0,
+          "t_out": 0.0,
+          "met": 0.0,
+          "clo": 0.0,
+          "rh": 0.0,
+          "vel": 0.0
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "met",
+          "clo",
+          "rh",
+          "vel"
+        ],
+        "method": "tree_gini_gain"
+      }
+    }
+  },
+  "comfort_transfer_features": {
+    "tag": "transfer",
+    "features": [
+      "ta",
+      "rh",
+      "t_out"
+    ],
+    "classes": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "split_counts": {
+      "train": 46274,
+      "validation": 8517,
+      "test": 8198
+    },
+    "calibration_split": "validation_buildings",
+    "test_split": "test_buildings",
+    "alpha": 0.1,
+    "target_coverage": 0.9,
+    "models": {
+      "random_forest": {
+        "calibration": {
+          "optimal_temperature": 0.9878211188051106,
+          "uncalibrated_ece": 0.06505419935242687,
+          "calibrated_ece": 0.06616757422776645,
+          "ece_improvement": -0.001113374875339579,
+          "uncalibrated_brier": 0.8019673367277299,
+          "calibrated_brier": 0.8022656076927301
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9044888997316418,
+          "mean_set_size": 4.311173456940717,
+          "median_set_size": 4.0,
+          "quantile": 0.8969744706968504,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.04476701634545011,
+            "3": 0.12539643815564772,
+            "4": 0.39046108807026103,
+            "5": 0.36008782629909736,
+            "6": 0.07184679190046353,
+            "7": 0.007440839229080264
+          },
+          "coverage_gap": 0.004488899731641793
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9036350329348621,
+          "mean_set_size": 4.306294218101976,
+          "median_set_size": 4.0,
+          "quantile": 0.8975677020012125,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.04562088314222981,
+            "3": 0.1283239814588924,
+            "4": 0.38716760185411075,
+            "5": 0.3593559404732862,
+            "6": 0.07209075384240059,
+            "7": 0.007440839229080264
+          },
+          "coverage_gap": 0.0036350329348621147
+        },
+        "gating_diagnostics": {
+          "n_samples": 8198,
+          "conservative_rate": 0.982922664064406,
+          "uncertainty_rate": 0.9543791168577702,
+          "severe_discomfort_risk_rate": 0.9817028543547207,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      },
+      "xgboost": {
+        "calibration": {
+          "optimal_temperature": 1.2085758085721638,
+          "uncalibrated_ece": 0.047110724795239825,
+          "calibrated_ece": 0.08497125698491172,
+          "ece_improvement": -0.03786053218967189,
+          "uncalibrated_brier": 0.6833981493918063,
+          "calibrated_brier": 0.6902967305015755
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9303488655769699,
+          "mean_set_size": 3.856794340082947,
+          "median_set_size": 4.0,
+          "quantile": 0.9321536421775818,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.030983166626006343,
+            "3": 0.1796779702366431,
+            "4": 0.7007806782141985,
+            "5": 0.07867772627470114,
+            "6": 0.009880458648450842
+          },
+          "coverage_gap": 0.03034886557696992
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9288850939253477,
+          "mean_set_size": 3.8382532324957306,
+          "median_set_size": 4.0,
+          "quantile": 0.9159550070762634,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.03025128080019517,
+            "3": 0.18431324713344718,
+            "4": 0.7079775555013418,
+            "5": 0.07184679190046353,
+            "6": 0.00561112466455233
+          },
+          "coverage_gap": 0.02888509392534766
+        },
+        "gating_diagnostics": {
+          "n_samples": 8198,
+          "conservative_rate": 0.9792632349353501,
+          "uncertainty_rate": 0.9697487191998049,
+          "severe_discomfort_risk_rate": 0.867162722615272,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      },
+      "logreg": {
+        "calibration": {
+          "optimal_temperature": 1.2449880559843571,
+          "uncalibrated_ece": 0.14617783182045058,
+          "calibrated_ece": 0.1226903864255919,
+          "ece_improvement": 0.023487445394858683,
+          "uncalibrated_brier": 0.8362943992514439,
+          "calibrated_brier": 0.8304752619790363
+        },
+        "conformal_uncalibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9172969016833374,
+          "mean_set_size": 4.692242010246401,
+          "median_set_size": 5.0,
+          "quantile": 0.8954938905672004,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.00561112466455233,
+            "3": 0.12722615272017565,
+            "4": 0.29507196877287145,
+            "5": 0.3215418394730422,
+            "6": 0.24249817028543547,
+            "7": 0.008050744083922909
+          },
+          "coverage_gap": 0.017296901683337418
+        },
+        "conformal_calibrated": {
+          "alpha": 0.1,
+          "target_coverage": 0.9,
+          "empirical_coverage": 0.9163210539155892,
+          "mean_set_size": 4.607709197365211,
+          "median_set_size": 5.0,
+          "quantile": 0.8841323171244013,
+          "calibration_size": 8517,
+          "test_size": 8198,
+          "set_size_distribution": {
+            "2": 0.0035374481580873383,
+            "3": 0.12051719931690656,
+            "4": 0.34240058550866065,
+            "5": 0.3358136130763601,
+            "6": 0.1937057818980239,
+            "7": 0.004025372041961454
+          },
+          "coverage_gap": 0.016321053915589134
+        },
+        "gating_diagnostics": {
+          "n_samples": 8198,
+          "conservative_rate": 1.0,
+          "uncertainty_rate": 0.9964625518419127,
+          "severe_discomfort_risk_rate": 1.0,
+          "max_confident_size_threshold": 2,
+          "severe_discomfort_threshold": 2
+        }
+      }
+    },
+    "explainability": {
+      "random_forest_tree_gini": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.48292338982945965,
+          "t_out": 0.3139271207167279,
+          "rh": 0.20314948945381248
+        },
+        "std_importance": {
+          "ta": 0.0,
+          "t_out": 0.0,
+          "rh": 0.0
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "rh"
+        ],
+        "method": "tree_gini_gain"
+      },
+      "random_forest_permutation_macro_f1": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.07318899256489039,
+          "t_out": 0.042130935467197116,
+          "rh": 0.03257448562706396
+        },
+        "std_importance": {
+          "ta": 0.0011487867362383931,
+          "t_out": 0.0039162092241170525,
+          "rh": 0.003330044961019908
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "rh"
+        ],
+        "method": "permutation_f1_macro"
+      },
+      "xgboost_tree_gain": {
+        "feature_names": [
+          "ta",
+          "rh",
+          "t_out"
+        ],
+        "mean_importance": {
+          "ta": 0.4990396201610565,
+          "t_out": 0.3182913064956665,
+          "rh": 0.18266910314559937
+        },
+        "std_importance": {
+          "ta": 0.0,
+          "t_out": 0.0,
+          "rh": 0.0
+        },
+        "ranking": [
+          "ta",
+          "t_out",
+          "rh"
+        ],
+        "method": "tree_gini_gain"
+      }
+    }
+  }
+}

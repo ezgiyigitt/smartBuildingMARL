@@ -1,0 +1,61 @@
+{
+  "generated_at_utc": "2026-11-19T22:22:24.278460+00:00",
+  "full_features_rf_permutation": {
+    "feature_names": [
+      "ta",
+      "rh",
+      "vel",
+      "clo",
+      "met",
+      "t_out"
+    ],
+    "mean_importance": {
+      "ta": 0.09774732295578256,
+      "t_out": 0.0480521131616566,
+      "rh": 0.02930554101566154,
+      "clo": 0.024542136062810527,
+      "met": 0.015705946195844922,
+      "vel": 0.008234954031522667
+    },
+    "std_importance": {
+      "ta": 0.004969468889940282,
+      "t_out": 0.00244697226895752,
+      "rh": 0.0029440619903907694,
+      "clo": 0.0029669550704392355,
+      "met": 0.004354673658542547,
+      "vel": 0.0013765781902454067
+    },
+    "ranking": [
+      "ta",
+      "t_out",
+      "rh",
+      "clo",
+      "met",
+      "vel"
+    ],
+    "method": "permutation_f1_macro"
+  },
+  "transfer_features_rf_permutation": {
+    "feature_names": [
+      "ta",
+      "rh",
+      "t_out"
+    ],
+    "mean_importance": {
+      "ta": 0.07318899256489039,
+      "t_out": 0.042130935467197116,
+      "rh": 0.03257448562706396
+    },
+    "std_importance": {
+      "ta": 0.0011487867362383931,
+      "t_out": 0.0039162092241170525,
+      "rh": 0.003330044961019908
+    },
+    "ranking": [
+      "ta",
+      "t_out",
+      "rh"
+    ],
+    "method": "permutation_f1_macro"
+  }
+}
