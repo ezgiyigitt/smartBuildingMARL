@@ -1,0 +1,360 @@
+{
+  "generated_at_utc": "2026-11-19T22:31:02.200199+00:00",
+  "phase": 5,
+  "dataset_name": "citylearn_challenge_2023_phase_1",
+  "schema_path": "C:\\Projects\\smartBuildingMARL\\data\\raw\\citylearn\\citylearn_challenge_2023_phase_1\\schema.json",
+  "n_buildings": 3,
+  "building_names": [
+    "Building_1",
+    "Building_2",
+    "Building_3"
+  ],
+  "building_class": "LSTMDynamicsBuilding",
+  "action_names": [
+    "dhw_storage",
+    "electrical_storage",
+    "cooling_device"
+  ],
+  "observation_count_per_building": 29,
+  "central_agent": false,
+  "timesteps": 720,
+  "seed": 0,
+  "runs": {
+    "business_as_usual": {
+      "controller_name": "business_as_usual",
+      "run_dir": "experiments\\runs\\20261119_223102_business_as_usual_seed0",
+      "district_energy_kwh": 1096.93569432199,
+      "citylearn_district_kpis": {
+        "all_time_peak_average": 0.8315936347330691,
+        "annual_normalized_unserved_energy_total": 0.0,
+        "carbon_emissions_total": 0.40825860078662507,
+        "cost_total": 0.38242768594194865,
+        "daily_one_minus_load_factor_average": 1.3062155598638334,
+        "daily_peak_average": 0.6827881917522917,
+        "discomfort_cold_delta_average": null,
+        "discomfort_cold_delta_maximum": null,
+        "discomfort_cold_delta_minimum": null,
+        "discomfort_cold_proportion": 0.0,
+        "discomfort_hot_delta_average": 9.91507341251249,
+        "discomfort_hot_delta_maximum": 15.082480112711588,
+        "discomfort_hot_delta_minimum": 4.215628941853841,
+        "discomfort_hot_proportion": 0.9797705554972173,
+        "discomfort_proportion": 0.9797705554972173,
+        "electricity_consumption_total": 0.4129225957262624,
+        "monthly_one_minus_load_factor_average": 1.131817658100172,
+        "one_minus_thermal_resilience_proportion": null,
+        "power_outage_normalized_unserved_energy_total": 0.0,
+        "ramping_average": 0.8888035963350484,
+        "zero_net_energy": 0.34357306055998943
+      },
+      "buildings": {
+        "Building_1": {
+          "electricity_consumption_kwh": 408.04461105167866,
+          "mean_indoor_temperature_c": 33.6276818674695,
+          "mean_cooling_setpoint_c": 24.02387566228238,
+          "max_overheat_delta_c": 16.79342269897461,
+          "mean_overheat_delta_c": 9.604132428122826,
+          "setpoint_violation_hours": 706,
+          "setpoint_violation_rate": 0.9819193324061196,
+          "occupant_weighted_violation_degree_hours": 15864.670930862427
+        },
+        "Building_2": {
+          "electricity_consumption_kwh": 220.39506813883781,
+          "mean_indoor_temperature_c": 34.700805438576225,
+          "mean_cooling_setpoint_c": 24.694405862121158,
+          "max_overheat_delta_c": 14.772623062133789,
+          "mean_overheat_delta_c": 10.010082889498523,
+          "setpoint_violation_hours": 706,
+          "setpoint_violation_rate": 0.9819193324061196,
+          "occupant_weighted_violation_degree_hours": 5177.058168411255
+        },
+        "Building_3": {
+          "electricity_consumption_kwh": 468.49601513147354,
+          "mean_indoor_temperature_c": 33.943331597743345,
+          "mean_cooling_setpoint_c": 24.17817982977388,
+          "max_overheat_delta_c": 13.681394577026367,
+          "mean_overheat_delta_c": 9.765825608509472,
+          "setpoint_violation_hours": 706,
+          "setpoint_violation_rate": 0.9819193324061196,
+          "occupant_weighted_violation_degree_hours": 10188.202993392944
+        }
+      },
+      "diagnostic_comfort_tsv": {
+        "status": "computed",
+        "domain_shift_warning": "Diagnostic indicator only. ASHRAE field survey models transferred to CityLearn simulation lack dynamic clo/met/vel states. Do not claim measured comfort.",
+        "buildings": {
+          "Building_1": {
+            "mean_predicted_tsv": 2.7037552155771905,
+            "std_predicted_tsv": 0.7363971430687435,
+            "fraction_acceptable_comfort_band": 0.004172461752433936,
+            "fraction_severe_discomfort": 0.9958275382475661
+          },
+          "Building_2": {
+            "mean_predicted_tsv": 2.777468706536857,
+            "std_predicted_tsv": 0.5586530008039232,
+            "fraction_acceptable_comfort_band": 0.012517385257301807,
+            "fraction_severe_discomfort": 0.9874826147426982
+          },
+          "Building_3": {
+            "mean_predicted_tsv": 2.788595271210014,
+            "std_predicted_tsv": 0.6371294294788913,
+            "fraction_acceptable_comfort_band": 0.011126564673157162,
+            "fraction_severe_discomfort": 0.9888734353268428
+          }
+        }
+      }
+    },
+    "basic_rbc": {
+      "controller_name": "citylearn_basic_rbc",
+      "run_dir": "experiments\\runs\\20261119_223102_basic_rbc_seed0",
+      "district_energy_kwh": 4942.545282512903,
+      "citylearn_district_kpis": {
+        "all_time_peak_average": 1.0886034453401712,
+        "annual_normalized_unserved_energy_total": 7.901827622345488e-11,
+        "carbon_emissions_total": 1.8808250261649875,
+        "cost_total": 1.836789119898419,
+        "daily_one_minus_load_factor_average": 0.7120449170057419,
+        "daily_peak_average": 1.3042966595150813,
+        "discomfort_cold_delta_average": 6.392896918981009,
+        "discomfort_cold_delta_maximum": 9.404691378275553,
+        "discomfort_cold_delta_minimum": 2.4431241353352866,
+        "discomfort_cold_proportion": 0.9599678556010595,
+        "discomfort_hot_delta_average": null,
+        "discomfort_hot_delta_maximum": null,
+        "discomfort_hot_delta_minimum": null,
+        "discomfort_hot_proportion": 0.0,
+        "discomfort_proportion": 0.9599678556010595,
+        "electricity_consumption_total": 1.891618387523721,
+        "monthly_one_minus_load_factor_average": 0.8332549897070394,
+        "one_minus_thermal_resilience_proportion": null,
+        "power_outage_normalized_unserved_energy_total": 0.0,
+        "ramping_average": 0.9317898242481802,
+        "zero_net_energy": 1.900856164356749
+      },
+      "buildings": {
+        "Building_1": {
+          "electricity_consumption_kwh": 2090.0778400301933,
+          "mean_indoor_temperature_c": 13.931112989762562,
+          "mean_cooling_setpoint_c": 24.02387566228238,
+          "max_overheat_delta_c": 0.21526145935058594,
+          "mean_overheat_delta_c": 0.00031806829078472704,
+          "setpoint_violation_hours": 0,
+          "setpoint_violation_rate": 0.0,
+          "occupant_weighted_violation_degree_hours": 0.2555408477783203
+        },
+        "Building_2": {
+          "electricity_consumption_kwh": 1206.4104755818844,
+          "mean_indoor_temperature_c": 20.1822077946139,
+          "mean_cooling_setpoint_c": 24.694405862121158,
+          "max_overheat_delta_c": 0.4623374938964844,
+          "mean_overheat_delta_c": 0.0008659521959753129,
+          "setpoint_violation_hours": 0,
+          "setpoint_violation_rate": 0.0,
+          "occupant_weighted_violation_degree_hours": 0.62261962890625
+        },
+        "Building_3": {
+          "electricity_consumption_kwh": 1646.0569669008255,
+          "mean_indoor_temperature_c": 20.384157119772198,
+          "mean_cooling_setpoint_c": 24.17817982977388,
+          "max_overheat_delta_c": 0.0158843994140625,
+          "mean_overheat_delta_c": 2.7233436807306154e-05,
+          "setpoint_violation_hours": 0,
+          "setpoint_violation_rate": 0.0,
+          "occupant_weighted_violation_degree_hours": 0.0195770263671875
+        }
+      },
+      "diagnostic_comfort_tsv": {
+        "status": "computed",
+        "domain_shift_warning": "Diagnostic indicator only. ASHRAE field survey models transferred to CityLearn simulation lack dynamic clo/met/vel states. Do not claim measured comfort.",
+        "buildings": {
+          "Building_1": {
+            "mean_predicted_tsv": -2.1821974965229485,
+            "std_predicted_tsv": 0.7832851612842096,
+            "fraction_acceptable_comfort_band": 0.2086230876216968,
+            "fraction_severe_discomfort": 0.7913769123783032
+          },
+          "Building_2": {
+            "mean_predicted_tsv": -1.9109874826147426,
+            "std_predicted_tsv": 0.9392560596564242,
+            "fraction_acceptable_comfort_band": 0.2211404728789986,
+            "fraction_severe_discomfort": 0.7788595271210014
+          },
+          "Building_3": {
+            "mean_predicted_tsv": -2.265646731571627,
+            "std_predicted_tsv": 0.5458930928337917,
+            "fraction_acceptable_comfort_band": 0.019471488178025034,
+            "fraction_severe_discomfort": 0.980528511821975
+          }
+        }
+      }
+    },
+    "comfort_price_rbc": {
+      "controller_name": "comfort_price_rbc",
+      "run_dir": "experiments\\runs\\20261119_223102_comfort_price_rbc_seed0",
+      "district_energy_kwh": 2503.9576780945063,
+      "citylearn_district_kpis": {
+        "all_time_peak_average": 0.9940532206418671,
+        "annual_normalized_unserved_energy_total": 0.0,
+        "carbon_emissions_total": 0.9737465213868358,
+        "cost_total": 0.9045515667499663,
+        "daily_one_minus_load_factor_average": 1.1566923564183482,
+        "daily_peak_average": 1.1612980711558127,
+        "discomfort_cold_delta_average": 3.0225612296822906,
+        "discomfort_cold_delta_maximum": 4.966837565104167,
+        "discomfort_cold_delta_minimum": 2.0076929728190103,
+        "discomfort_cold_proportion": 0.26064463812757416,
+        "discomfort_hot_delta_average": 2.326254963874817,
+        "discomfort_hot_delta_maximum": 2.4869165420532227,
+        "discomfort_hot_delta_minimum": 2.0571374893188477,
+        "discomfort_hot_proportion": 0.005920753264027442,
+        "discomfort_proportion": 0.2665653913916016,
+        "electricity_consumption_total": 0.9781363739934994,
+        "monthly_one_minus_load_factor_average": 1.0197237195960038,
+        "one_minus_thermal_resilience_proportion": null,
+        "power_outage_normalized_unserved_energy_total": 0.0,
+        "ramping_average": 1.852337231754918,
+        "zero_net_energy": 0.9266837482679867
+      },
+      "buildings": {
+        "Building_1": {
+          "electricity_consumption_kwh": 934.754623606801,
+          "mean_indoor_temperature_c": 22.25165325345184,
+          "mean_cooling_setpoint_c": 24.02387566228238,
+          "max_overheat_delta_c": 2.1225757598876953,
+          "mean_overheat_delta_c": 0.04239335411612945,
+          "setpoint_violation_hours": 25,
+          "setpoint_violation_rate": 0.03477051460361613,
+          "occupant_weighted_violation_degree_hours": 57.46876907348633
+        },
+        "Building_2": {
+          "electricity_consumption_kwh": 693.5482586324215,
+          "mean_indoor_temperature_c": 23.64903509965029,
+          "mean_cooling_setpoint_c": 24.694405862121158,
+          "max_overheat_delta_c": 2.85125732421875,
+          "mean_overheat_delta_c": 0.19537904232698952,
+          "setpoint_violation_hours": 106,
+          "setpoint_violation_rate": 0.1474269819193324,
+          "occupant_weighted_violation_degree_hours": 69.30759239196777
+        },
+        "Building_3": {
+          "electricity_consumption_kwh": 875.6547958552837,
+          "mean_indoor_temperature_c": 23.199795124759593,
+          "mean_cooling_setpoint_c": 24.17817982977388,
+          "max_overheat_delta_c": 1.888397216796875,
+          "mean_overheat_delta_c": 0.04486177892777784,
+          "setpoint_violation_hours": 25,
+          "setpoint_violation_rate": 0.03477051460361613,
+          "occupant_weighted_violation_degree_hours": 37.11786460876465
+        }
+      },
+      "diagnostic_comfort_tsv": {
+        "status": "computed",
+        "domain_shift_warning": "Diagnostic indicator only. ASHRAE field survey models transferred to CityLearn simulation lack dynamic clo/met/vel states. Do not claim measured comfort.",
+        "buildings": {
+          "Building_1": {
+            "mean_predicted_tsv": -1.3073713490959666,
+            "std_predicted_tsv": 1.3909457523649018,
+            "fraction_acceptable_comfort_band": 0.2614742698191933,
+            "fraction_severe_discomfort": 0.7385257301808067
+          },
+          "Building_2": {
+            "mean_predicted_tsv": -0.8636995827538247,
+            "std_predicted_tsv": 1.6258698577411936,
+            "fraction_acceptable_comfort_band": 0.33657858136300417,
+            "fraction_severe_discomfort": 0.6634214186369958
+          },
+          "Building_3": {
+            "mean_predicted_tsv": -1.560500695410292,
+            "std_predicted_tsv": 1.2838562281940582,
+            "fraction_acceptable_comfort_band": 0.18915159944367177,
+            "fraction_severe_discomfort": 0.8108484005563282
+          }
+        }
+      }
+    },
+    "random": {
+      "controller_name": "random_seed0",
+      "run_dir": "experiments\\runs\\20261119_223102_random_seed0",
+      "district_energy_kwh": 4314.996457502246,
+      "citylearn_district_kpis": {
+        "all_time_peak_average": 1.316332258782753,
+        "annual_normalized_unserved_energy_total": 2.9471007706100366e-11,
+        "carbon_emissions_total": 1.6336087720709953,
+        "cost_total": 1.5872612217584503,
+        "daily_one_minus_load_factor_average": 0.8642477784420363,
+        "daily_peak_average": 1.3285401834815196,
+        "discomfort_cold_delta_average": 6.213919851118789,
+        "discomfort_cold_delta_maximum": 11.038592974344889,
+        "discomfort_cold_delta_minimum": 2.083040237426758,
+        "discomfort_cold_proportion": 0.843580629353495,
+        "discomfort_hot_delta_average": 2.9888706560488103,
+        "discomfort_hot_delta_maximum": 3.559940973917643,
+        "discomfort_hot_delta_minimum": 2.5875473022460938,
+        "discomfort_hot_proportion": 0.0071867525406326205,
+        "discomfort_proportion": 0.8507673818941277,
+        "electricity_consumption_total": 1.6568477037136233,
+        "monthly_one_minus_load_factor_average": 0.9504898930237361,
+        "one_minus_thermal_resilience_proportion": null,
+        "power_outage_normalized_unserved_energy_total": 0.0,
+        "ramping_average": 2.333508798406666,
+        "zero_net_energy": 1.6092782320476147
+      },
+      "buildings": {
+        "Building_1": {
+          "electricity_consumption_kwh": 1795.0922094732523,
+          "mean_indoor_temperature_c": 15.473234358351155,
+          "mean_cooling_setpoint_c": 24.02387566228238,
+          "max_overheat_delta_c": 3.482349395751953,
+          "mean_overheat_delta_c": 0.016967187173177536,
+          "setpoint_violation_hours": 4,
+          "setpoint_violation_rate": 0.005563282336578581,
+          "occupant_weighted_violation_degree_hours": 6.313421249389648
+        },
+        "Building_2": {
+          "electricity_consumption_kwh": 1076.5009270869195,
+          "mean_indoor_temperature_c": 20.50060986345103,
+          "mean_cooling_setpoint_c": 24.694405862121158,
+          "max_overheat_delta_c": 4.3712310791015625,
+          "mean_overheat_delta_c": 0.12739181783832662,
+          "setpoint_violation_hours": 50,
+          "setpoint_violation_rate": 0.06954102920723226,
+          "occupant_weighted_violation_degree_hours": 54.18496513366699
+        },
+        "Building_3": {
+          "electricity_consumption_kwh": 1443.403320942074,
+          "mean_indoor_temperature_c": 21.045916945944242,
+          "mean_cooling_setpoint_c": 24.17817982977388,
+          "max_overheat_delta_c": 3.638996124267578,
+          "mean_overheat_delta_c": 0.03216868680441993,
+          "setpoint_violation_hours": 13,
+          "setpoint_violation_rate": 0.01808066759388039,
+          "occupant_weighted_violation_degree_hours": 27.298978805541992
+        }
+      },
+      "diagnostic_comfort_tsv": {
+        "status": "computed",
+        "domain_shift_warning": "Diagnostic indicator only. ASHRAE field survey models transferred to CityLearn simulation lack dynamic clo/met/vel states. Do not claim measured comfort.",
+        "buildings": {
+          "Building_1": {
+            "mean_predicted_tsv": -2.030598052851182,
+            "std_predicted_tsv": 0.826648345163094,
+            "fraction_acceptable_comfort_band": 0.21974965229485396,
+            "fraction_severe_discomfort": 0.780250347705146
+          },
+          "Building_2": {
+            "mean_predicted_tsv": -1.5006954102920724,
+            "std_predicted_tsv": 1.4605377733343206,
+            "fraction_acceptable_comfort_band": 0.2698191933240612,
+            "fraction_severe_discomfort": 0.7301808066759388
+          },
+          "Building_3": {
+            "mean_predicted_tsv": -2.034770514603616,
+            "std_predicted_tsv": 0.9782977020262597,
+            "fraction_acceptable_comfort_band": 0.10987482614742698,
+            "fraction_severe_discomfort": 0.8901251738525731
+          }
+        }
+      }
+    }
+  }
+}
