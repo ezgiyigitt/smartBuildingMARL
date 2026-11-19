@@ -1,0 +1,8 @@
+# Phase 1 runtime. Prefer installing via: pip install -e ".[dev]"
+# CityLearn 3.5.0 pulls gymnasium, numpy, pandas, scikit-learn, torch.
+fastapi>=0.115,<0.116
+uvicorn[standard]>=0.32,<0.33
+pydantic>=2.9,<3
+pydantic-settings>=2.6,<3
+pyyaml>=6.0,<7
+citylearn==3.5.0
