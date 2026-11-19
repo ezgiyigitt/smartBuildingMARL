@@ -1,0 +1,52 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Flutter / Dart
+frontend/.dart_tool/
+frontend/.packages
+frontend/build/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+
+# Data and artifacts (do not commit raw datasets or weights)
+data/raw/**
+!data/raw/**/.gitkeep
+data/processed/**
+!data/processed/.gitkeep
+artifacts/models/**
+!artifacts/models/.gitkeep
+# Keep scientific summary reports; ignore accidental large dumps
+artifacts/reports/*
+!artifacts/reports/.gitkeep
+!artifacts/reports/*.md
+!artifacts/reports/*.json
+artifacts/figures/**
+!artifacts/figures/.gitkeep
+experiments/runs/**
+!experiments/runs/.gitkeep
+*.pth
+*.ckpt
+*.joblib
+*.parquet
+*.csv.gz
+*.xlsx
+
+# Local databases and logs
+*.sqlite
+*.db
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
